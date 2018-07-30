@@ -1,0 +1,30 @@
+﻿{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "virtualNetworkName": {
+      "value": "testVnet"
+    },
+    "virtualNetworkNewOrExisting": {
+      "value": "new"
+    },
+    "adminUsername": {
+      "value": "username"
+    },
+    "sshKeyData": {
+      "value": "SSH-PUB-KEY"
+    },
+    "vmNamePrefix": {
+      "value": "testVM"
+    },
+	"rhsmUsername": {
+		"value": "changeme"
+	},
+	"rhsmPassword": {
+		"value": "changeme"
+	},
+	"rhsmPoolId": {
+		"value": "changeme"
+	}
+  }
+}
