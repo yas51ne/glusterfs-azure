@@ -1,0 +1,42 @@
+{
+  "clusters": [
+    {
+      "nodes": [
+        {
+          "node": {
+            "hostnames": {
+              "manage": [
+                "gluster-0"
+              ],
+              "storage": [
+                "40.89.139.187"
+              ]
+            },
+            "zone": 1
+          },
+          "devices": [
+            "/dev/sdc",
+            "/dev/sdd"
+          ]
+        },
+        {
+          "node": {
+            "hostnames": {
+              "manage": [
+                "gluster-1"
+              ],
+              "storage": [
+                "40.89.137.3"
+              ]
+            },
+            "zone": 2
+          },
+          "devices": [
+            "/dev/sdc",
+            "/dev/sdd"
+          ]
+        }
+      ]
+    }
+  ]
+}
