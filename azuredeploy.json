@@ -167,7 +167,14 @@
 		"metadata": {
 			"description": "Red Hat Subscription Manager Pool ID with OpenShift entitlements. To find it, run on registered server: subscription-manager list"
 		}
-	}
+	},
+  "glusterVersion": {
+    "type": "string",
+    "defaultValue": "310",
+    "metadata": {
+      "description": "Glusterfs Version to install on the nodes"
+    }
+  }
   },
   "variables": {
     "pipName": "pip",
@@ -190,7 +197,8 @@
     "osImageOffer": "[variables(concat('osImage', parameters('hostOs'), 'Offer'))]",
     "osImageSKU": "[variables(concat('osImage', parameters('hostOs'), 'SKU'))]",
     "osImageVersion": "[variables(concat('osImage', parameters('hostOs'), 'version'))]",
-    "sshKeyPath": "[concat('/home/',parameters('adminUserName'),'/.ssh/authorized_keys')]"
+    "sshKeyPath": "[concat('/home/',parameters('adminUserName'),'/.ssh/authorized_keys')]",
+    "glusterVersion": "parameters('glusterVersion')"
   },
   "resources": [
     {
@@ -216,7 +224,7 @@
       }
     },
     {
-      "condition": "[equals(parameters('virtualNetworkNewOrExisting'),'existing')]",
+      "condition": "[equals(parameters('virtualNetworkNewOrExisting'),'new')]",
       "apiVersion": "2017-06-01",
       "type": "Microsoft.Network/virtualNetworks/subnets",
       "name": "[concat(parameters('virtualNetworkName'), '/', parameters('gfsSubnetName'))]",
@@ -258,8 +266,7 @@
               "publicIPAddress": {
                 "id": "[resourceId('Microsoft.Network/publicIPAddresses',concat(variables('pipName'), copyindex()))]"
               },
-              "privateIPAllocationMethod": "Static",
-              "privateIPAddress": "[concat(parameters('vmIPPrefix'), copyindex())]",
+              "privateIPAllocationMethod": "Dynamic",
               "subnet": {
                 "id": "[variables('gfsSubnetRef')]"
               }
@@ -352,7 +359,7 @@
           ]
         },
         "protectedSettings": {
-          "commandToExecute": "[concat(parameters('customScriptCommandToExecute'), ' ', parameters('vmNamePrefix'), ' ', parameters('vmIPPrefix'), ' ', parameters('volumeName'), ' ', copyindex(), ' ', parameters('nodeNumber'), ' ', parameters('rhsmUsername'), ' ', parameters('rhsmPassword'), ' ', parameters('rhsmPoolId'))]"
+          "commandToExecute": "[concat(parameters('customScriptCommandToExecute'), ' ', parameters('vmNamePrefix'), ' ', parameters('vmIPPrefix'), ' ', parameters('volumeName'), ' ', copyindex(), ' ', parameters('nodeNumber'), ' ', parameters('rhsmUsername'), ' ', parameters('rhsmPassword'), ' ', parameters('rhsmPoolId'), ' ', parameters('glusterVersion'))]"
         }
       }
     }

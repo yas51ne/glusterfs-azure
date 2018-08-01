@@ -3,10 +3,10 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "virtualNetworkName": {
-      "value": "testVnet"
+      "value": "k8s-vnet"
     },
     "virtualNetworkNewOrExisting": {
-      "value": "new"
+      "value": "existing"
     },
     "adminUsername": {
       "value": "azureuser"
@@ -17,14 +17,17 @@
     "vmNamePrefix": {
       "value": "glusterfs-"
     },
-	"rhsmUsername": {
-		"value": "changeme"
-	},
-	"rhsmPassword": {
-		"value": "changeme"
-	},
-	"rhsmPoolId": {
-		"value": "changeme"
-	}
+    "glusterVersion": {
+      "value": "310"
+    },
+  	"rhsmUsername": {
+  		"value": "changeme"
+  	},
+  	"rhsmPassword": {
+  		"value": "changeme"
+  	},
+  	"rhsmPoolId": {
+  		"value": "changeme"
+  	}
   }
 }
