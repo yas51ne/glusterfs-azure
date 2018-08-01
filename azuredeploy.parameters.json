@@ -5,6 +5,9 @@
     "virtualNetworkName": {
       "value": "k8s-vnet"
     },
+    "gfsSubnetName": {
+      "value": "gluster-subnet"
+    },
     "virtualNetworkNewOrExisting": {
       "value": "existing"
     },
