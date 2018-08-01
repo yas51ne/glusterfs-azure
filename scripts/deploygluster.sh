@@ -378,7 +378,6 @@ else
         configure_rhsub
     fi
     configure_network
- #   configure_disks
     configure_gluster
     enable_adminuser_ssh_cmd
 fi

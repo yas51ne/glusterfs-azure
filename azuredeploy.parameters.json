@@ -9,10 +9,10 @@
       "value": "gluster-subnet"
     },
     "nodeNumber": {
-      "value": 6
+      "value": 2
     },
     "diskNumber": {
-      "value": 4
+      "value": 2
     },
     "virtualNetworkNewOrExisting": {
       "value": "existing"
@@ -21,7 +21,7 @@
       "value": "azureuser"
     },
     "sshKeyData": {
-      "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCwTr9tBK27Nuh519aIaBTY9ircAFRU3BBfp5wRIiwmJfBY20KlsRjNpz0fvhK/9BvpR9BD+ArTwjpjjg0pzm1XBOUJssFCNQi3zYOG6ahZy5KmK1o2JCFI/7vTgagmZpRkG1efMdg1sV+Eh09BavmGdb+1d7i930I28g1Ac5Vpl+PD6ft+EBu/i2SuvEhc2Gf22zaF6u4PX544NPL4bDh+7v0vfab3X1sGYC3XCBF/o99C8DP+ULeOPnhWMBqYCx0cxG5+e6WhO3ICGeMXzeNClFprV5HMbjmTkZaX3CWlAFrfbMiS9dQdGKp7HT4CaytYRlAmKu4Eigil0HBsyjeJ datalab-platform-052018-stage-01@pwc.com"
+      "value": "put your ssh public key here"
     },
     "vmNamePrefix": {
       "value": "glusterfs-"
