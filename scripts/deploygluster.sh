@@ -17,6 +17,7 @@ RHSMUSERNAME=${6}
 RHSMPASSWORD=${7}
 RHSMPOOLID=${8}
 GLUSTERVERSION=${9}
+ADMINUSERNAME=$}{10}
 
 MOUNTPOINT="/datadrive"
 RAIDCHUNKSIZE=128
@@ -361,6 +362,10 @@ configure_rhsub(){
     rpm -q kernel
 }
 
+enable_adminuser_ssh_cmd() {
+sed -i -e "s/Defaults    requiretty/Defaults:$ADMINUSERNAME    \!requiretty/g" /etc/sudoers
+}
+
 check_os
 
 if [ $iscentos -ne 0 ] && [ $isubuntu -ne 0 ] && [ $isrhel -ne 0 ];
@@ -375,4 +380,5 @@ else
     configure_network
  #   configure_disks
     configure_gluster
+    enable_adminuser_ssh_cmd
 fi

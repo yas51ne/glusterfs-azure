@@ -19,9 +19,14 @@
       "defaultValue": 2,
       "allowedValues": [
         2,
+        3,
         4,
+        5,
         6,
-        8
+        7,
+        8,
+        9,
+        10
       ],
       "metadata": {
         "description": "Number of nodes in the gluster file system"
@@ -33,7 +38,13 @@
       "allowedValues": [
         2,
         3,
-        4
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
       ],
       "metadata": {
         "description": "Number of disks per node"
@@ -49,7 +60,7 @@
         4095
       ],
       "metadata": {
-        "description": "Number of disks per node"
+        "description": "sIZE of disks in each node"
       }
     },
 
@@ -359,7 +370,7 @@
           ]
         },
         "protectedSettings": {
-          "commandToExecute": "[concat(parameters('customScriptCommandToExecute'), ' ', parameters('vmNamePrefix'), ' ', parameters('vmIPPrefix'), ' ', parameters('volumeName'), ' ', copyindex(), ' ', parameters('nodeNumber'), ' ', parameters('rhsmUsername'), ' ', parameters('rhsmPassword'), ' ', parameters('rhsmPoolId'), ' ', parameters('glusterVersion'))]"
+          "commandToExecute": "[concat(parameters('customScriptCommandToExecute'), ' ', parameters('vmNamePrefix'), ' ', parameters('vmIPPrefix'), ' ', parameters('volumeName'), ' ', copyindex(), ' ', parameters('nodeNumber'), ' ', parameters('rhsmUsername'), ' ', parameters('rhsmPassword'), ' ', parameters('rhsmPoolId'), ' ', parameters('glusterVersion'), ' ', parameters('adminUserName'))]"
         }
       }
     }

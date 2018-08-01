@@ -8,6 +8,12 @@
     "gfsSubnetName": {
       "value": "gluster-subnet"
     },
+    "nodeNumber": {
+      "value": "6"
+    },
+    "diskNumber": {
+      "value": "4"
+    },
     "virtualNetworkNewOrExisting": {
       "value": "existing"
     },
