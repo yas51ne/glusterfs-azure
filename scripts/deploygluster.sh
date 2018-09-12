@@ -364,6 +364,10 @@ configure_rhsub(){
 
 enable_adminuser_ssh_cmd() {
 sed -i -e "s/Defaults    requiretty/Defaults:$ADMINUSERNAME    \!requiretty/g" /etc/sudoers
+if [ $isubuntu -eq 0 ];
+then
+    apt-get install lvm2 -y
+fi
 }
 
 check_os
